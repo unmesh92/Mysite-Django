@@ -1,0 +1,390 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+.headercontainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #395870;
+  color: #fff;
+  border: 1px solid #395870;
+  font: 15px/1.5px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  height: 60px;
+}
+
+.thecontentcontainer {
+  display: flex;
+  flex-wrap: wrap;
+}
+.thenavigationbar {
+  width: 13%;
+  background-color: #395870;
+  padding-top: 20px;
+}
+
+.thenavigationbar a {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 45px;
+  margin-top: 25px;
+}
+.thenavigationbar a:hover {
+  background-color: #fff;
+  color: #395870;
+  display: block;
+}
+
+.bodyofpage {
+  display: flex;
+  flex-wrap: wrap;
+  width: 86%;
+  margin-left: 5px;
+}
+
+.theprelude {
+  width: 100%;
+  height: auto;
+  background: #cbe2c1;
+  background: linear-gradient(to right, #a1d3b0, #f6f1d3);
+  border: 1px single #cbe2c1;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+
+.thepreludeheader {
+  display: block;
+  padding-top: 10px;
+  margin-left: 30%;
+}
+
+.thepreludebody {
+  padding-top: 25px;
+  margin-left: 10%;
+  padding-bottom: 15px;
+}
+
+.themainbody {
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  margin-top: 5px;
+}
+
+table {
+  border-collapse: separate;
+  border-spacing: 0px; /* Border Spacing is made 0*/
+  color: #4a4a4d;
+  font: 14px/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+/* Table Cell Properties*/
+td,
+th {
+  border: 1px solid black; /* Border Shorthand has border width, type and color*/
+  vertical-align: middle;
+  padding: 10px 15px;
+  word-wrap: normal;
+}
+/* to make even rows in a different color*/
+tbody tr:nth-child(even) {
+  background: #f0f0f2;
+}
+/* To make Header of a different color*/
+th {
+  background-color: #395870;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.footercontainer {
+  margin-top: 60px;
+}
+.borderingimage {
+  border: 1px double #395870;
+  border-radius: 5px;
+  height: 150px;
+  width: 600px;
+  text-align: center;
+  margin-left: 30%;
+  background-color: #395870;
+  color: #fff;
+  text-transform: uppercase;
+}
+.borderingimage img {
+  height: 130px;
+  margin: -66px 0 22px 0;
+  background-color: #395870;
+}
+.footertext {
+  color: #4a4a4d;
+  margin-left: 30px;
+}
+
+.nextdayactivities {
+  margin-top: 25px;
+  margin-left: 75%;
+  margin-bottom: 25px;
+}
+
+.nextdayactivities a {
+  text-decoration: none;
+  color: #5995da;
+  font-size: 20px;
+}
+
+/* Mobile View*/
+@media only screen and (max-width: 400px) {
+  .thenavigationbar {
+    display: none;
+  }
+
+  .theprelude {
+    height: 50px;
+  }
+
+  .thepreludebody {
+    display: none;
+  }
+
+  .headercontainer,
+  .bodyofpage {
+    width: 100%;
+    margin-left: 0px;
+    margin-bottom: auto;
+  }
+
+  .themainbody {
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+  /* Force table to not be like tables anymore */
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+  }
+
+  /* Hide table headers (but not display: none;, for accessibility) */
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  tr {
+    border: 1px solid #ccc;
+  }
+
+  td {
+    /* Behave  like a "row" */
+    border: none;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 50%;
+  }
+
+  td:before {
+    /* Now like a table header */
+    position: absolute;
+    /* Top/left values mimic padding */
+    top: 6px;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+  }
+
+  /*
+	Label the data
+	*/
+  td:nth-of-type(1):before {
+    content: "Activities";
+  }
+  td:nth-of-type(2):before {
+    content: "Method";
+  }
+  td:nth-of-type(3):before {
+    content: "Duration";
+  }
+  td:nth-of-type(4):before {
+    content: "Contact POC";
+  }
+  td:nth-of-type(5):before {
+    content: "links";
+  }
+  td:nth-of-type(6):before {
+    content: "Details";
+  }
+  .borderingimage {
+    margin-left: 0px;
+    width: 100%;
+  }
+  .nextdayactivities {
+    margin-left: 25%;
+  }
+}
+
+/* Tablet View */
+
+@media only screen and (min-width: 401px) and (max-width: 960px) {
+  .thenavigationbar {
+    display: none;
+  }
+
+  .theprelude {
+    height: 50px;
+  }
+
+  .thepreludebody {
+    display: none;
+  }
+
+  .headercontainer,
+  .bodyofpage {
+    width: 100%;
+    margin-left: 0px;
+    margin-bottom: auto;
+  }
+
+  .themainbody {
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+  /* Force table to not be like tables anymore */
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+  }
+
+  /* Hide table headers (but not display: none;, for accessibility) */
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  tr {
+    border: 1px solid #ccc;
+  }
+
+  td {
+    /* Behave  like a "row" */
+    border: none;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 50%;
+  }
+
+  td:before {
+    /* Now like a table header */
+    position: absolute;
+    /* Top/left values mimic padding */
+    top: 6px;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+  }
+
+  /*
+	Label the data
+	*/
+  td:nth-of-type(1):before {
+    content: "Activities";
+  }
+  td:nth-of-type(2):before {
+    content: "Method";
+  }
+  td:nth-of-type(3):before {
+    content: "Duration";
+  }
+  td:nth-of-type(4):before {
+    content: "Contact POC";
+  }
+  td:nth-of-type(5):before {
+    content: "links";
+  }
+  td:nth-of-type(6):before {
+    content: "Details";
+  }
+  .borderingimage {
+    margin-left: 0px;
+    width: 100%;
+  }
+  .nextdayactivities {
+    margin-left: 25%;
+  }
+}
+
+form {
+  margin-left: 30%;
+  margin-right: auto;
+  width: 500px;
+  height: 333px;
+  padding: 40px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  background-clip: padding-box;
+  background: #395870;
+  overflow: hidden;
+  background-size: cover;
+}
+textarea {
+  background: #f0f0f2 no-repeat scroll 16px 16px;
+  width: 450px;
+  height: 110px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  background-clip: padding-box;
+  display: block;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 18px;
+  color: #fff;
+  padding-left: 20px;
+  padding-right: 10px;
+  padding-top: 12px;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+input {
+  width: 300px;
+  height: 48px;
+  border: 1px solid #f0f0f2;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  background-clip: padding-box;
+  display: block;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 18px;
+  color: #fff;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-bottom: 20px;
+}
+
+.themaincontainerinput {
+  width: 100%;
+}
+.themaintablecontainer {
+  width: 100%;
+}

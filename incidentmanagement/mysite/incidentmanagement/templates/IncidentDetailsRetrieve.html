@@ -1,0 +1,16 @@
+<html>
+
+<h1>Incident Similarity Tool: </h1>
+
+<h2>Enter the Incident Number or Description </h2>
+
+<br>
+<form method="POST" action='.'>
+    {% csrf_token %}
+        {{ form }}
+      <button type="submit">Search</button>
+
+</form>
+
+
+</html>
