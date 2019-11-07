@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.shortcuts import render, get_object_or_404
 from django.http import Http404
 from django.http import HttpResponse
-from incidentmanagement.forms import IncidentDetailsSelectionForm
+from im.forms import IncidentDetailsSelectionForm
 
 # Create your views here.
 
@@ -17,9 +17,9 @@ def IncidentDetailsRetrieveView(request):
 	import requests as reqs
 	context ={'form': IncidentDetailsSelectionForm(),'category_list':[] }
 	if request.method == 'POST':
-	
+
 		form = IncidentDetailsSelectionForm(request.POST)
- 
+
 		if form.is_valid():
 			FinalIncidentResult = []
 			IncidentNumberEnteredByUser = form.cleaned_data['IncidentNumberField']
@@ -61,7 +61,7 @@ def IncidentDetailsRetrieveView(request):
 					return df_idf.loc[df_idf['incident_number'] == incident_number, 'assigned_to'].tolist()[0]
 			def recommend(item_id, num):
 					tempList=[]
-					
+
 					cntValue =1
 					print("Top " + str(num) + " Incidents similar to Incident:" + str(item(item_id)) + " and their resolutions are")
 					print("-------")
@@ -77,10 +77,10 @@ def IncidentDetailsRetrieveView(request):
 					return tempList
 			ResValue = recommend(item_id=item_id, num=5)
 			print(ResValue)
-			
-			
+
+
 			#######################################################################################################
-			
+
 			context ={'form': IncidentDetailsSelectionForm(),'IncidentNumberEnteredByUser':IncidentNumberEnteredByUser,'IncidentDescriptionEnteredByUser':IncidentDescriptionEnteredByUser,'ResValue':ResValue,'FinalIncidentResult':FinalIncidentResult}
 			return render(request, 'IncidentSearchDetailsDisplay.html',context)
 
