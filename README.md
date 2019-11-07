@@ -20,9 +20,13 @@ install PIP
 Depends on:
 
 python3 -m pip install django
+
 python3 -m pip install requests
+
 python3 -m pip install simplejson
+
 python3 -m pip install sklearn
+
 
 ##Start the server
 
@@ -49,9 +53,13 @@ admin
 
 Use the python_buildpack. 
 
-cf push mono -b python_buildpack -c "null"
+cf push mysite -p . -c "python3 ./im/mysite/manage.py runserver" -b python_buildpack -u none
 
-cf push mysite -p . -c "python ./im/mysite/manage.py runserver" -b python_buildpack -u none
+cf logs mysite --recent
+
+
+
+
 
 Please read the manifest for more details
 
