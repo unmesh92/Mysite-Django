@@ -25,7 +25,7 @@ SECRET_KEY = '&094ge)qb1u$6-ym)tae!v_za^1)_*2x42a=c-6ck%i5_)b7@q'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['mysite.apps.pcf-t01-we.rabobank.nl', 'mysite.apps.pcf-t02-we.rabobank.nl', 'localhost', '127.0.0.1', '[::1]']
 
 
 # Application definition

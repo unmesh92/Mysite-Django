@@ -1,0 +1,7 @@
+---
+applications:
+- name: mysite
+  memory: 512M
+  instances: 1
+  buildpack: python_buildpack
+  command: gunicorn mysite.wsgi:application
